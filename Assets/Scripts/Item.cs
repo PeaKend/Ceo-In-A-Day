@@ -15,7 +15,6 @@ public class Item : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Item obtained");
             bpmScript.addBpm(itemBpm);
             Destroy(gameObject);
         }
