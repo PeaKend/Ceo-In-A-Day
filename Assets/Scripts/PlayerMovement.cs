@@ -27,17 +27,13 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") && (isGrounded || airJump))
         {
-            // Debug
-            Debug.Log("Jump");
-
-            // Code
-                // Air jump bool
+            // Air jump bool
             if (!isGrounded)
             {
                 airJump = false;
             }
 
-                // Jump method
+            // Jump method
             playerRB.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
@@ -47,7 +43,6 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButton("Crouch"))
         {
             // Debug
-            Debug.Log("Crouch");
             transform.localScale = new Vector3(1.0f, 0.5f);
 
             // Code TODO
