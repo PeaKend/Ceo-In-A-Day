@@ -13,6 +13,15 @@ public class PlayerMovement : MonoBehaviour {
     }
 	
 	void Update () {
+        playerJump();
+        playerCrouch();
+	}
+
+    // Methods
+
+        // Jump
+    void playerJump()
+    {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             // Debug
@@ -21,6 +30,10 @@ public class PlayerMovement : MonoBehaviour {
             // Code
             playerRB.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
         }
+    }
+        // Crouch 
+    void playerCrouch()
+    {
         if (Input.GetButton("Crouch"))
         {
             // Debug
@@ -28,11 +41,12 @@ public class PlayerMovement : MonoBehaviour {
             transform.localScale = new Vector3(1.0f, 0.5f);
 
             // Code TODO
-        } else
+        }
+        else
         {
             transform.localScale = new Vector3(1.0f, 1.0f);
         }
-	}
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
