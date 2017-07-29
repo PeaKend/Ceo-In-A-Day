@@ -11,11 +11,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
     }
-
-    void Start ()
-    {
-		
-	}
 	
 	void Update () {
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -26,9 +21,16 @@ public class PlayerMovement : MonoBehaviour {
             // Code
             playerRB.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
         }
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButton("Crouch"))
         {
+            // Debug
             Debug.Log("Crouch");
+            transform.localScale = new Vector3(1.0f, 0.5f);
+
+            // Code TODO
+        } else
+        {
+            transform.localScale = new Vector3(1.0f, 1.0f);
         }
 	}
 
