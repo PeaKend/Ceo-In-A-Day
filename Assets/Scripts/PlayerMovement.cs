@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public float jumpForce;
+    public float playermovementSpeed;
     bool isGrounded;
+    bool airJump;
     Rigidbody2D playerRB;
 
     void Awake()
@@ -13,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 	
 	void Update () {
+        moveplayertopositioninX();
         playerJump();
         playerCrouch();
 	}
@@ -22,12 +25,19 @@ public class PlayerMovement : MonoBehaviour {
         // Jump
     void playerJump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && (isGrounded || airJump))
         {
             // Debug
             Debug.Log("Jump");
 
             // Code
+                // Air jump bool
+            if (!isGrounded)
+            {
+                airJump = false;
+            }
+
+                // Jump method
             playerRB.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
@@ -47,6 +57,14 @@ public class PlayerMovement : MonoBehaviour {
             transform.localScale = new Vector3(1.0f, 1.0f);
         }
     }
+        // Go to position in X
+    void moveplayertopositioninX()
+    {
+        if (transform.position.x < -6.0f)
+        {
+            transform.position = transform.position + new Vector3(1.0f, 0.0f, 0.0f) * playermovementSpeed * Time.deltaTime;
+        }
+        }
 
     // Events
 
@@ -59,6 +77,7 @@ public class PlayerMovement : MonoBehaviour {
 
             // Code
             isGrounded = true;
+            airJump = true;
         }    
     }
 
