@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpForce;
     public float playermovementSpeed;
     bool isGrounded;
+    bool airJump;
     Rigidbody2D playerRB;
 
     void Awake()
@@ -24,12 +25,19 @@ public class PlayerMovement : MonoBehaviour {
         // Jump
     void playerJump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && (isGrounded || airJump))
         {
             // Debug
             Debug.Log("Jump");
 
             // Code
+                // Air jump bool
+            if (!isGrounded)
+            {
+                airJump = false;
+            }
+
+                // Jump method
             playerRB.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
@@ -69,6 +77,7 @@ public class PlayerMovement : MonoBehaviour {
 
             // Code
             isGrounded = true;
+            airJump = true;
         }    
     }
 
