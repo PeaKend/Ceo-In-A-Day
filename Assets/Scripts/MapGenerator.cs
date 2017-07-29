@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour {
-    public float spawnTime;
     public float minRandom;
     public float maxRandom;
-    public float objectSize;
+    public float spawnTime;
+
     public float minrandomSize;
     public float maxrandomSize;
+    public float objectSize;
+
+    public float movementSpeed;
+    public float minpositionY;
+    public float maxpositionY;
+    bool reachedminpositionY;
+    bool reachedmaxpositionY;
+
     public GameObject spawnPrefab;
     Transform spawnPosition;
 
     void Awake()
     {
-        spawnPosition = gameObject.transform;    
+        spawnPosition = gameObject.transform;
+        reachedminpositionY = true;
+        reachedmaxpositionY = false;
+        minpositionY = spawnPosition.position.y - 1.0f;
+        maxpositionY = spawnPosition.position.y + 1.0f;
     }
 
     void Start () {
@@ -22,10 +34,33 @@ public class MapGenerator : MonoBehaviour {
     }
 	
 	void Update () {
-		
+        movingSpawner();
+        Debug.Log(spawnPosition.position);
 	}
     
     // Methods
+
+    void movingSpawner()
+    {
+        if (!reachedmaxpositionY)
+        {
+            transform.position = transform.position + new Vector3(0.0f, 1.0f, 0.0f) * movementSpeed * Time.deltaTime;
+            if (transform.position.y >= maxpositionY)
+            {
+                reachedmaxpositionY = true;
+                reachedminpositionY = false;
+            }
+        }
+        if (!reachedminpositionY)
+        {
+            transform.position = transform.position + new Vector3(0.0f, -1.0f, 0.0f) * movementSpeed * Time.deltaTime;
+            if (transform.position.y <= minpositionY)
+            {
+                reachedmaxpositionY = false;
+                reachedminpositionY = true;
+            }
+        }
+    }
 
     float timeRandomizer ()
     {
