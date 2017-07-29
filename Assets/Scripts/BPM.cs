@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BPM : MonoBehaviour {
+    public float bpm;
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    public void addBpm(float amountofBpm)
+    {
+        bpm += amountofBpm;
+    }
 }
