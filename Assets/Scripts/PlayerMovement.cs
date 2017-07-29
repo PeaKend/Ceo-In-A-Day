@@ -67,10 +67,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Ground")
         {
-            // Debug
-            Debug.Log("Grounded");
-
-            // Code
             isGrounded = true;
             airJump = true;
         }    
@@ -80,10 +76,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Ground")
         {
-            // Debug
-            Debug.Log("NOT Grounded");
-
-            // Code
             isGrounded = false;
         }
     }
