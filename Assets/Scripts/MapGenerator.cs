@@ -19,6 +19,8 @@ public class MapGenerator : MonoBehaviour {
 
     public GameObject spawnPrefab;
     public GameObject spawnItem;
+
+    float bpmAmount;
     Transform spawnPosition;
 
     void Awake()
@@ -79,19 +81,21 @@ public class MapGenerator : MonoBehaviour {
         GameObject instantiatedObject;
         while (true)
         {
+            bpmAmount = GameObject.FindGameObjectWithTag("GameController").GetComponent<BPM>().bpm;
             timeRandomizer();
             sizeRandomizer();
+            minRandom = (9.0f * 5.0f * 5.0f * 2.0f) / bpmAmount;
+            maxRandom = (9.0f * 5.0f * 20.0f * 2.0f) / bpmAmount;
+            yield return new WaitForSeconds(spawnTime);
             instantiatedObject = GameObject.Instantiate(spawnPrefab, spawnPosition.position, Quaternion.identity);
             instantiatedObject.transform.localScale = new Vector3(objectSize, instantiatedObject.transform.localScale.y, 1.0f);
             StartCoroutine(spawnItems(instantiatedObject.transform));
-            yield return new WaitForSeconds(spawnTime);
         }
     }
 
     IEnumerator spawnItems(Transform instantiatedobjectTransform)
     {
         int randomNumber = Random.Range(1, 3);
-        Debug.Log(instantiatedobjectTransform.lossyScale);
         for (int i = 0; i <= randomNumber; i++)
         {
             Instantiate(spawnItem, new Vector3 (Random.Range(instantiatedobjectTransform.position.x - instantiatedobjectTransform.lossyScale.x / 2.0f, instantiatedobjectTransform.position.x + instantiatedobjectTransform.lossyScale.x / 2.0f), 
