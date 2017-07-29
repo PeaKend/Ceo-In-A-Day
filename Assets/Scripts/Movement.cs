@@ -16,4 +16,19 @@ public class Movement : MonoBehaviour {
         transform.position = transform.position + new Vector3 (-1.0f, 0.0f, 0.0f) * movementSpeed * Time.deltaTime;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().isClamped = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().isClamped = true;
+        }
+    }
 }

@@ -7,18 +7,28 @@ public class PlayerMovement : MonoBehaviour {
     public float playermovementSpeed;
     bool isGrounded;
     bool airJump;
+    public bool isClamped;
+    public bool lost;
     Rigidbody2D playerRB;
 
     void Awake()
     {
+        isClamped = true;
+        lost = false;
         playerRB = gameObject.GetComponent<Rigidbody2D>();
     }
 	
 	void Update () {
-        moveplayertopositioninX();
+        horizontalplayerMovement();
         playerJump();
         playerCrouch();
-	}
+        if (isClamped && !lost)
+        {
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8.0f, 0.0f),
+                                             Mathf.Clamp(transform.position.y, -4.0f, 4.0f),
+                                             0.0f);
+        }
+        }
 
     // Methods
 
@@ -27,6 +37,9 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") && (isGrounded || airJump))
         {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, 
+                                            0.0f);
+
             // Air jump bool
             if (!isGrounded)
             {
@@ -53,16 +66,12 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
         // Go to position in X
-    void moveplayertopositioninX()
+    void horizontalplayerMovement()
     {
-        if (transform.position.x < -6.0f)
-        {
-            transform.position = transform.position + new Vector3(1.0f, 0.0f, 0.0f) * playermovementSpeed * Time.deltaTime;
-        }
-        if (transform.position.x > -6.0f)
-        {
-            transform.position = transform.position + new Vector3(-1.0f, 0.0f, 0.0f) * playermovementSpeed * Time.deltaTime;
-        }
+        transform.position = transform.position + new Vector3(1.0f * Input.GetAxisRaw("Horizontal"), 
+                                                              0.0f, 
+                                                              0.0f)
+                                                              * playermovementSpeed * 5.0f * Time.deltaTime;
     }
 
     // Events
