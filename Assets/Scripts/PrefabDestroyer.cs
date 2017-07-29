@@ -6,7 +6,6 @@ public class PrefabDestroyer : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Destroy");
         Destroy(collision.gameObject);
     }
 }
