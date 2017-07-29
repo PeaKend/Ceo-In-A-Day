@@ -37,6 +37,9 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") && (isGrounded || airJump))
         {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, 
+                                            0.0f);
+
             // Air jump bool
             if (!isGrounded)
             {
