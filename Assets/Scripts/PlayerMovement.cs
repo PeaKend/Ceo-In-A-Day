@@ -59,7 +59,11 @@ public class PlayerMovement : MonoBehaviour {
         {
             transform.position = transform.position + new Vector3(1.0f, 0.0f, 0.0f) * playermovementSpeed * Time.deltaTime;
         }
+        if (transform.position.x > -6.0f)
+        {
+            transform.position = transform.position + new Vector3(-1.0f, 0.0f, 0.0f) * playermovementSpeed * Time.deltaTime;
         }
+    }
 
     // Events
 
