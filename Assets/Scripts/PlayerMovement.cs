@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public float jumpForce;
+    public float playermovementSpeed;
     bool isGrounded;
     Rigidbody2D playerRB;
 
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 	
 	void Update () {
+        moveplayertopositioninX();
         playerJump();
         playerCrouch();
 	}
@@ -47,6 +49,14 @@ public class PlayerMovement : MonoBehaviour {
             transform.localScale = new Vector3(1.0f, 1.0f);
         }
     }
+        // Go to position in X
+    void moveplayertopositioninX()
+    {
+        if (transform.position.x < -6.0f)
+        {
+            transform.position = transform.position + new Vector3(1.0f, 0.0f, 0.0f) * playermovementSpeed * Time.deltaTime;
+        }
+        }
 
     // Events
 
