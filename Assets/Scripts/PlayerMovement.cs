@@ -9,6 +9,13 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void Update () {
-	    	
+        if (Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("Jump");
+        }
+        if (Input.GetButtonDown("Crouch"))
+        {
+            Debug.Log("Crouch");
+        }
 	}
 }
