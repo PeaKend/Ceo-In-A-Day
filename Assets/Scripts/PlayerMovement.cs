@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public float jumpForce;
-    public bool isGrounded;
+    bool isGrounded;
     Rigidbody2D playerRB;
 
     void Awake()
@@ -47,6 +47,8 @@ public class PlayerMovement : MonoBehaviour {
             transform.localScale = new Vector3(1.0f, 1.0f);
         }
     }
+
+    // Events
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
