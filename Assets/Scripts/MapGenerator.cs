@@ -3,14 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour {
+    public float spawnTime;
+    public GameObject spawnPrefab;
+    Transform spawnPosition;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    void Awake()
+    {
+        spawnPosition = gameObject.transform;    
+    }
+
+    void Start () {
+        StartCoroutine(spawnObjects());
+    }
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    IEnumerator spawnObjects()
+    {
+        while (true)
+        {
+            GameObject.Instantiate(spawnPrefab, spawnPosition.position, Quaternion.identity);
+            yield return new WaitForSeconds(spawnTime);
+        }
+    }
 }
