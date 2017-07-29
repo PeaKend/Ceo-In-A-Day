@@ -18,6 +18,7 @@ public class MapGenerator : MonoBehaviour {
     bool reachedmaxpositionY;
 
     public GameObject spawnPrefab;
+    public GameObject spawnItem;
     Transform spawnPosition;
 
     void Awake()
@@ -35,9 +36,8 @@ public class MapGenerator : MonoBehaviour {
 	
 	void Update () {
         movingSpawner();
-        Debug.Log(spawnPosition.position);
-	}
-    
+    }
+
     // Methods
 
     void movingSpawner()
@@ -83,7 +83,23 @@ public class MapGenerator : MonoBehaviour {
             sizeRandomizer();
             instantiatedObject = GameObject.Instantiate(spawnPrefab, spawnPosition.position, Quaternion.identity);
             instantiatedObject.transform.localScale = new Vector3(objectSize, instantiatedObject.transform.localScale.y, 1.0f);
+            StartCoroutine(spawnItems(instantiatedObject.transform));
             yield return new WaitForSeconds(spawnTime);
         }
     }
+
+    IEnumerator spawnItems(Transform instantiatedobjectTransform)
+    {
+        int randomNumber = Random.Range(1, 3);
+        Debug.Log(instantiatedobjectTransform.lossyScale);
+        for (int i = 0; i <= randomNumber; i++)
+        {
+            Instantiate(spawnItem, new Vector3 (Random.Range(instantiatedobjectTransform.position.x - instantiatedobjectTransform.lossyScale.x / 2.0f, instantiatedobjectTransform.position.x + instantiatedobjectTransform.lossyScale.x / 2.0f), 
+                                                instantiatedobjectTransform.position.y + 1.5f, 
+                                                instantiatedobjectTransform.position.z),
+                                                Quaternion.identity);
+        }
+        yield return null;
+    }
+
 }
