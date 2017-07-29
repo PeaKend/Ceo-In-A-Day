@@ -9,7 +9,7 @@ public class BPM : MonoBehaviour {
     private void Awake()
     {
         bpmtextGameobject = GameObject.FindGameObjectWithTag("BPMCounter").GetComponent<BPMText>();
-        addBpm(1.0f);
+        bpmtextGameobject.updateText(bpm);
     }
 
     public void addBpm(float amountofBpm)
