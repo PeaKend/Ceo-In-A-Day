@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public float jumpForce;
+    public bool isGrounded;
     Rigidbody2D playerRB;
 
     void Awake()
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             // Debug
             Debug.Log("Jump");
@@ -30,4 +31,29 @@ public class PlayerMovement : MonoBehaviour {
             Debug.Log("Crouch");
         }
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            // Debug
+            Debug.Log("Grounded");
+
+            // Code
+            isGrounded = true;
+        }    
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            // Debug
+            Debug.Log("NOT Grounded");
+
+            // Code
+            isGrounded = false;
+        }
+    }
+
 }
