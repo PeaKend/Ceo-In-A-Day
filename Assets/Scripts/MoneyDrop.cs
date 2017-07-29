@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoneyDrop : MonoBehaviour {
     public float dropRate;
     public GameObject money;
+    float bpmAmount;
 
     void Awake()
     {
@@ -15,8 +16,9 @@ public class MoneyDrop : MonoBehaviour {
     {
         while (true)
         {
+            bpmAmount = GameObject.FindGameObjectWithTag("GameController").GetComponent<BPM>().bpm;
             Instantiate(money, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(1.0f / dropRate);
+            yield return new WaitForSeconds(1.0f / ((dropRate / 100.0f) * (bpmAmount - 89.0f)));
         }
     }
 }
