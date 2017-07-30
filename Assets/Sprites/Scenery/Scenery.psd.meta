@@ -1,0 +1,302 @@
+fileFormatVersion: 2
+guid: 715843345a053c44f85a1cee533a5e33
+timeCreated: 1501423036
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Scenery_0
+    21300002: Scenery_1
+    21300004: Scenery_2
+    21300006: Scenery_3
+    21300008: Scenery_4
+    21300010: Scenery_5
+    21300012: Scenery_6
+    21300014: Scenery_7
+    21300016: Scenery_8
+    21300018: Scenery_9
+    21300020: Scenery_10
+    21300022: Scenery_11
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 20
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scenery_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 474
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 15}
+      outline:
+      - - {x: -6.5, y: 12.5}
+        - {x: -6.5, y: -12.5}
+        - {x: 6.5, y: -12.5}
+        - {x: 6.5, y: 12.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 474
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 15}
+      outline:
+      - - {x: -9, y: 14.5}
+        - {x: -10, y: 12.5}
+        - {x: -10, y: -14.5}
+        - {x: 10, y: -14.5}
+        - {x: 10, y: 14.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 474
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 15}
+      outline:
+      - - {x: -9, y: 14.5}
+        - {x: -10, y: 12.5}
+        - {x: -10, y: -14.5}
+        - {x: 10, y: -14.5}
+        - {x: 10, y: 14.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 474
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 15}
+      outline:
+      - - {x: -10, y: 15.5}
+        - {x: -10, y: -15.5}
+        - {x: 10, y: -15.5}
+        - {x: 10, y: 15.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 474
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 15}
+      outline:
+      - - {x: -6, y: 17}
+        - {x: -10, y: 11}
+        - {x: -10, y: -17}
+        - {x: 10, y: -17}
+        - {x: 10, y: 14}
+        - {x: 6, y: 17}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_5
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 474
+        width: 11
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 15}
+      outline:
+      - - {x: -4.5, y: 11.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -5.5, y: -11.5}
+        - {x: 5.5, y: -11.5}
+        - {x: 5.5, y: 10.5}
+        - {x: 2.5, y: 11.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_6
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 474
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 15}
+      outline:
+      - - {x: -10, y: 10}
+        - {x: -10, y: -10}
+        - {x: 10, y: -10}
+        - {x: 10, y: 10}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 445
+        width: 99
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_8
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 446
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_9
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 478
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_10
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 482
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scenery_11
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 429
+        width: 60
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
