@@ -21,6 +21,7 @@ public class MapGenerator : MonoBehaviour {
     public GameObject spawnItem;
 
     public bool canspawnItem;
+    public bool canMove;
 
     float bpmAmount;
     Transform spawnPosition;
@@ -30,7 +31,7 @@ public class MapGenerator : MonoBehaviour {
         spawnPosition = gameObject.transform;
         reachedminpositionY = true;
         reachedmaxpositionY = false;
-        if (gameObject.tag != "ScenerySpawner")
+        if (gameObject.tag != "ScenerySpawner" && canMove)
         {
             minpositionY = spawnPosition.position.y - 1.0f;
             maxpositionY = spawnPosition.position.y + 1.0f;
