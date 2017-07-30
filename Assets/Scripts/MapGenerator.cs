@@ -30,8 +30,11 @@ public class MapGenerator : MonoBehaviour {
         spawnPosition = gameObject.transform;
         reachedminpositionY = true;
         reachedmaxpositionY = false;
-        minpositionY = spawnPosition.position.y - 1.0f;
-        maxpositionY = spawnPosition.position.y + 1.0f;
+        if (gameObject.tag != "ScenerySpawner")
+        {
+            minpositionY = spawnPosition.position.y - 1.0f;
+            maxpositionY = spawnPosition.position.y + 1.0f;
+        }
     }
 
     void Start () {
