@@ -9,7 +9,10 @@ public class Movement : MonoBehaviour {
     void Awake()
     {
         bpmSpeed = GameObject.FindGameObjectWithTag("GameController").GetComponent<BPM>().bpm;
-        movementSpeed += bpmSpeed / 10.0f;
+        if (gameObject.tag != "Floor")
+        {
+            movementSpeed += bpmSpeed / 10.0f;
+        }
     }
 
     void Update () {
@@ -18,7 +21,7 @@ public class Movement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && gameObject.tag != "Floor")
         {
             collision.gameObject.GetComponent<PlayerMovement>().isClamped = false;
         }
@@ -26,7 +29,7 @@ public class Movement : MonoBehaviour {
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && gameObject.tag != "Floor")
         {
             collision.gameObject.GetComponent<PlayerMovement>().isClamped = true;
         }
