@@ -15,7 +15,7 @@ public class PrefabDestroyer : MonoBehaviour {
         }
 
     }
-
+    
     IEnumerator waitandDestroy(Collider2D collision)
     {
         yield return new WaitForSeconds(1.5f);
