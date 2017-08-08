@@ -118,4 +118,4 @@ public class MapGenerator : MonoBehaviour {
         yield return null;
     }
 
-}
+}   
