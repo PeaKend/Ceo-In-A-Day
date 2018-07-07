@@ -1,6 +1,6 @@
 # CEO In A Day
 
-### This game is archived and i dont plan to continue it.
+### This game is archived and i dont plan to continue development.
 
 Would you run your way to the top?
 
